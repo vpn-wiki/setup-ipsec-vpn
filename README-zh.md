@@ -1,4 +1,5 @@
 [English](README.md) | [中文](README-zh.md)
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # IPsec VPN 服务器一键安装脚本
 

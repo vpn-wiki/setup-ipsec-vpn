@@ -1,4 +1,5 @@
 [English](manage-users.md) | [中文](manage-users-zh.md)
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # Manage VPN Users
 

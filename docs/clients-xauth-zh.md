@@ -1,4 +1,5 @@
 [English](clients-xauth.md) | [中文](clients-xauth-zh.md)
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # 配置 IPsec/XAuth VPN 客户端
 

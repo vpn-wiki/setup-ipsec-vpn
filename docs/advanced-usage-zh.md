@@ -1,4 +1,5 @@
 [English](advanced-usage.md) | [中文](advanced-usage-zh.md)
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # 高级用法
 

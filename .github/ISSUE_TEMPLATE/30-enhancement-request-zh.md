@@ -1,4 +1,5 @@
 ---
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 name: 改进建议
 about: 请使用这个模板来提交改进建议
 title: ''

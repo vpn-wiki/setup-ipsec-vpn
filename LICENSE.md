@@ -1,4 +1,5 @@
 ### Creative Commons Attribution-ShareAlike 3.0 Unported License
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 Link to license summary: https://creativecommons.org/licenses/by-sa/3.0/
 
 Copyright (C) 2014-2024 [Lin Song](https://github.com/hwdsl2)   

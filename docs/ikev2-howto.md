@@ -1,4 +1,5 @@
 [English](ikev2-howto.md) | [中文](ikev2-howto-zh.md)
+[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # Guide: How to Set Up and Use IKEv2 VPN
 
