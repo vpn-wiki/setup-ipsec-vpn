@@ -1,4 +1,5 @@
 [English](README.md) | [中文](README-zh.md)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # IPsec VPN Server Auto Setup Scripts
 
