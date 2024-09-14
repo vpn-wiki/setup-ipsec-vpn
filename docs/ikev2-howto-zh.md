@@ -1,5 +1,5 @@
 [English](ikev2-howto.md) | [中文](ikev2-howto-zh.md)
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # IKEv2 VPN 配置和使用指南
 
@@ -491,7 +491,7 @@ sudo chmod 600 ca.cer client.cer client.key
 1. 单击 **Add** 保存 VPN 连接信息。
 1. 启用 **VPN** 连接。
 
-另外，你也可以使用命令行连接。示例步骤请参见 [#1399](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1399) 和 [#1007](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1007)。如果你遇到错误 `Could not find source connection`，编辑 `/etc/netplan/01-netcfg.yaml` 并将 `renderer: networkd` 替换为 `renderer: NetworkManager`，然后运行 `sudo netplan apply`。要连接到 VPN，运行 `sudo nmcli c up VPN`。要断开连接：`sudo nmcli c down VPN`。
+另外，你也可以使用命令行连接。示例步骤请参见 [#1399](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1399) 和 [#1007](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1007)。如果你遇到错误 `Could not find source connection`，编辑 `/etc/netplan/01-netcfg.yaml` 并将 `renderer: networkd` 替换为 `renderer: NetworkManager`，然后运行 `sudo netplan apply`。要连接到 VPN，运行 `sudo nmcli c up VPN`。要断开连接：`sudo nmcli c down VPN`。
 
 连接成功后，你可以到 [这里](https://www.ipchicken.com) 检测你的 IP 地址，应该显示为`你的 VPN 服务器 IP`。
 
@@ -565,7 +565,7 @@ sudo chmod 600 ca.cer client.cer client.key
        peer=ike2-rw-client policy-template-group=ike2-rw
    /ip ipsec policy add group=ike2-rw proposal=ike2-rw template=yes
    ```
-4. 更多信息请参见 [#1112](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1112#issuecomment-1059628623)。
+4. 更多信息请参见 [#1112](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1112#issuecomment-1059628623)。
 
 > 已在以下系统测试   
 > mar/02/2022 12:52:57 by RouterOS 6.48   
@@ -592,19 +592,19 @@ sudo chmod 600 ca.cer client.cer client.key
 
 首先，请确保你的 VPN 客户端设备上指定的 VPN 服务器地址与 IKEv2 辅助脚本输出中的服务器地址**完全一致**。例如，如果在配置 IKEv2 时未指定域名，则不可以使用域名进行连接。要更改 IKEv2 服务器地址，参见[这一小节](#更改-ikev2-服务器地址)。
 
-对于有外部防火墙的服务器（比如 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)），请为 VPN 打开 UDP 端口 500 和 4500。阿里云用户请参见 [#433](https://github.com/hwdsl2/setup-ipsec-vpn/issues/433)。
+对于有外部防火墙的服务器（比如 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)），请为 VPN 打开 UDP 端口 500 和 4500。阿里云用户请参见 [#433](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/433)。
 
 [检查日志及 VPN 状态](clients-zh.md#检查日志及-vpn-状态)是否有错误。如果你遇到 retransmission 相关错误并且无法连接，说明 VPN 客户端和服务器之间的网络可能有问题。如果你从中国大陆进行连接，请考虑改用 IPsec VPN 以外的其他解决方案。
 
 ### Ubuntu 20.04 无法导入客户端配置
 
-如果你在 2024-04-10 之前安装了 IPsec VPN，并且你的 VPN 服务器运行的是 Ubuntu Linux 版本 20.04，那么你可能会遇到无法在 iOS 或 macOS 设备上导入新生成的客户端配置文件 (`.mobileconfig`) 的问题，例如提示密码不正确。这可能是由 Ubuntu 20.04 上 libnss3 相关软件包的更新引起的，需要对 IKEv2 脚本进行一些更改 ([25670f3](https://github.com/hwdsl2/setup-ipsec-vpn/commit/25670f3))。
+如果你在 2024-04-10 之前安装了 IPsec VPN，并且你的 VPN 服务器运行的是 Ubuntu Linux 版本 20.04，那么你可能会遇到无法在 iOS 或 macOS 设备上导入新生成的客户端配置文件 (`.mobileconfig`) 的问题，例如提示密码不正确。这可能是由 Ubuntu 20.04 上 libnss3 相关软件包的更新引起的，需要对 IKEv2 脚本进行一些更改 ([25670f3](https://github.com/vpn-wiki/setup-ipsec-vpn/commit/25670f3))。
 
 要解决此问题，请首先按照[这些步骤](#更新-ikev2-辅助脚本)将服务器上的 IKEv2 脚本更新到最新版本。然后运行 `sudo ikev2.sh` 并选择 "export" 以重新创建客户端配置文件。
 
 ### macOS Sonoma 客户端重新连接
 
-macOS 14 (Sonoma) 存在[一个小问题](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1486)，可能会导致 IKEv2 VPN 每 24-48 分钟断开并重新连接一次。其他 macOS 版本不受影响。首先[检查你的 macOS 版本](https://support.apple.com/zh-cn/HT201260)。要解决此问题，请按以下步骤操作。
+macOS 14 (Sonoma) 存在[一个小问题](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1486)，可能会导致 IKEv2 VPN 每 24-48 分钟断开并重新连接一次。其他 macOS 版本不受影响。首先[检查你的 macOS 版本](https://support.apple.com/zh-cn/HT201260)。要解决此问题，请按以下步骤操作。
 
 **注：** 如果你在 2023 年 12 月 10 日之后安装了 IPsec VPN，则无需执行任何操作，因为已经包含以下修复。
 
@@ -902,7 +902,7 @@ sudo bash ikev2addr.sh
 
 ## 更新 IKEv2 辅助脚本
 
-IKEv2 辅助脚本会不时更新，以进行错误修复和改进（[更新日志](https://github.com/hwdsl2/setup-ipsec-vpn/commits/master/extras/ikev2setup.sh)）。 当有新版本可用时，你可以更新服务器上的 IKEv2 辅助脚本。这是可选的。请注意，这些命令将覆盖任何现有的 `ikev2.sh`。
+IKEv2 辅助脚本会不时更新，以进行错误修复和改进（[更新日志](https://github.com/vpn-wiki/setup-ipsec-vpn/commits/master/extras/ikev2setup.sh)）。 当有新版本可用时，你可以更新服务器上的 IKEv2 辅助脚本。这是可选的。请注意，这些命令将覆盖任何现有的 `ikev2.sh`。
 
 ```bash
 wget https://get.vpnsetup.net/ikev2 -O /opt/src/ikev2.sh

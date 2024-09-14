@@ -1,5 +1,5 @@
 [English](advanced-usage.md) | [中文](advanced-usage-zh.md)
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # Advanced Usage
 
@@ -34,9 +34,9 @@ Below is a list of some popular public DNS providers for your reference.
 
 Advanced users can define `VPN_DNS_SRV1` and optionally `VPN_DNS_SRV2` when running the VPN setup script. For more details, see [Customize VPN options](../README.md#customize-vpn-options).
 
-It is possible to set different DNS server(s) for specific IKEv2 client(s). For this use case, please refer to [#1562](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1562#issuecomment-2151361658).
+It is possible to set different DNS server(s) for specific IKEv2 client(s). For this use case, please refer to [#1562](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1562#issuecomment-2151361658).
 
-If your use case requires redirecting DNS traffic to another server using IPTables rules, see [#1565](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1565).
+If your use case requires redirecting DNS traffic to another server using IPTables rules, see [#1565](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1565).
 
 In certain circumstances, you may want VPN clients to use the specified DNS server(s) only for resolving internal domain name(s), and use their locally configured DNS servers to resolve all other domain names. This can be configured using the `modecfgdomains` option, e.g. `modecfgdomains="internal.example.com, home"`. Add this option to section `conn ikev2-cp` in `/etc/ipsec.d/ikev2.conf` for IKEv2, and to section `conn xauth-psk` in `/etc/ipsec.conf` for IPsec/XAuth ("Cisco IPsec"). Then run `service ipsec restart`. IPsec/L2TP mode does not support this option.
 

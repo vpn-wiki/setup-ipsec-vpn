@@ -1,5 +1,5 @@
 [English](README.md) | [中文](README-zh.md)
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # IPsec VPN Server Auto Setup Scripts
 
@@ -323,7 +323,7 @@ Enjoy your very own VPN! :sparkles::tada::rocket::sparkles:
 
 The same VPN account can be used by your multiple devices. However, due to an IPsec/L2TP limitation, if you wish to connect multiple devices from behind the same NAT (e.g. home router), you must use [IKEv2](docs/ikev2-howto.md) or [IPsec/XAuth](docs/clients-xauth.md) mode. To view or update VPN user accounts, see [Manage VPN users](docs/manage-users.md).
 
-For servers with an external firewall (e.g. [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)), open UDP ports 500 and 4500 for the VPN. Aliyun users, see [#433](https://github.com/hwdsl2/setup-ipsec-vpn/issues/433).
+For servers with an external firewall (e.g. [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)), open UDP ports 500 and 4500 for the VPN. Aliyun users, see [#433](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/433).
 
 Clients are set to use [Google Public DNS](https://developers.google.com/speed/public-dns/) when the VPN is active. If another DNS provider is preferred, see [Advanced usage](docs/advanced-usage.md).
 
@@ -423,9 +423,9 @@ For more information, see [Uninstall the VPN](docs/uninstall.md).
 
 ## Feedback & Questions
 
-- Have a suggestion for this project? Open an [Enhancement request](https://github.com/hwdsl2/setup-ipsec-vpn/issues/new/choose). [Pull requests](https://github.com/hwdsl2/setup-ipsec-vpn/pulls) are also welcome.
-- If you found a reproducible bug, open a bug report for the [IPsec VPN](https://github.com/libreswan/libreswan/issues?q=is%3Aissue) or for the [VPN scripts](https://github.com/hwdsl2/setup-ipsec-vpn/issues/new/choose).
-- Got a question? Please first search [existing issues](https://github.com/hwdsl2/setup-ipsec-vpn/issues?q=is%3Aissue) and comments [in this Gist](https://gist.github.com/hwdsl2/9030462#comments) and [on my blog](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#disqus_thread).
+- Have a suggestion for this project? Open an [Enhancement request](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/new/choose). [Pull requests](https://github.com/vpn-wiki/setup-ipsec-vpn/pulls) are also welcome.
+- If you found a reproducible bug, open a bug report for the [IPsec VPN](https://github.com/libreswan/libreswan/issues?q=is%3Aissue) or for the [VPN scripts](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/new/choose).
+- Got a question? Please first search [existing issues](https://github.com/vpn-wiki/setup-ipsec-vpn/issues?q=is%3Aissue) and comments [in this Gist](https://gist.github.com/hwdsl2/9030462#comments) and [on my blog](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#disqus_thread).
 - Ask VPN related questions on the [Libreswan](https://lists.libreswan.org/mailman/listinfo/swan) or [strongSwan](https://lists.strongswan.org/mailman/listinfo/users) mailing list, or read these wikis: [[1]](https://libreswan.org/wiki/Main_Page) [[2]](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide/sec-securing_virtual_private_networks) [[3]](https://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation) [[4]](https://wiki.gentoo.org/wiki/IPsec_L2TP_VPN_server) [[5]](https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup).
 
 ## License

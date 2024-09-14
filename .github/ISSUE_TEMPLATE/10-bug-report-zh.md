@@ -1,5 +1,5 @@
 ---
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 name: 错误报告
 about: 请使用这个模板来提交 bug
 title: ''
@@ -10,11 +10,11 @@ assignees: ''
 
 **任务列表**
 
-- [ ] 我已阅读 [自述文件](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md)
-- [ ] 我已阅读 [重要提示](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md#重要提示)
-- [ ] 我已按照说明 [配置 VPN 客户端](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md#下一步)
-- [ ] 我检查了 [IKEv1 故障排除](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md#ikev1-故障排除)，[IKEv2 故障排除](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md#ikev2-故障排除) 以及 [VPN 状态](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md#检查日志及-vpn-状态)
-- [ ] 我搜索了已有的 [Issues](https://github.com/hwdsl2/setup-ipsec-vpn/issues?q=is%3Aissue)
+- [ ] 我已阅读 [自述文件](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/README-zh.md)
+- [ ] 我已阅读 [重要提示](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/README-zh.md#重要提示)
+- [ ] 我已按照说明 [配置 VPN 客户端](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/README-zh.md#下一步)
+- [ ] 我检查了 [IKEv1 故障排除](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/docs/clients-zh.md#ikev1-故障排除)，[IKEv2 故障排除](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md#ikev2-故障排除) 以及 [VPN 状态](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/docs/clients-zh.md#检查日志及-vpn-状态)
+- [ ] 我搜索了已有的 [Issues](https://github.com/vpn-wiki/setup-ipsec-vpn/issues?q=is%3Aissue)
 - [ ] 这个 bug 是关于 VPN 安装脚本，而不是 IPsec VPN 本身
 
 <!---
@@ -34,7 +34,7 @@ assignees: ''
 简要地描述你期望的正确结果。
 
 **日志**
-[检查日志及 VPN 状态](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md#检查日志及-vpn-状态)，并添加错误日志以帮助解释该问题（如果适用）。
+[检查日志及 VPN 状态](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/docs/clients-zh.md#检查日志及-vpn-状态)，并添加错误日志以帮助解释该问题（如果适用）。
 
 **服务器信息（请填写以下信息）**
 - 操作系统: [比如 Debian 11]

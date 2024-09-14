@@ -1,5 +1,5 @@
 [English](bbr.md) | [中文](bbr-zh.md)
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # 高级用法：部署 Google BBR 拥塞控制算法
 

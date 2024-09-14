@@ -1,5 +1,5 @@
 [English](README.md) | [中文](README-zh.md)
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # IPsec VPN 服务器一键安装脚本
 
@@ -323,7 +323,7 @@ sudo VPN_PROTECT_CONFIG=yes sh vpn.sh
 
 同一个 VPN 账户可以在你的多个设备上使用。但是由于 IPsec/L2TP 的局限性，如果需要连接在同一个 NAT（比如家用路由器）后面的多个设备，你必须使用 [IKEv2](docs/ikev2-howto-zh.md) 或者 [IPsec/XAuth](docs/clients-xauth-zh.md) 模式。要查看或更改 VPN 用户账户，请参见 [管理 VPN 用户](docs/manage-users-zh.md)。
 
-对于有外部防火墙的服务器（比如 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)），请为 VPN 打开 UDP 端口 500 和 4500。阿里云用户请参见 [#433](https://github.com/hwdsl2/setup-ipsec-vpn/issues/433)。
+对于有外部防火墙的服务器（比如 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)），请为 VPN 打开 UDP 端口 500 和 4500。阿里云用户请参见 [#433](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/433)。
 
 在 VPN 已连接时，客户端配置为使用 [Google Public DNS](https://developers.google.com/speed/public-dns/)。如果偏好其它的域名解析服务，请参见 [高级用法](docs/advanced-usage-zh.md)。
 
@@ -423,9 +423,9 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnuninstall.sh
 
 ## 问题和反馈
 
-- 如果你有对本项目的建议，请提交一个 [改进建议](https://github.com/hwdsl2/setup-ipsec-vpn/issues/new/choose)，或者欢迎提交 [Pull request](https://github.com/hwdsl2/setup-ipsec-vpn/pulls)。
-- 如果你发现了一个可重复的程序漏洞，请为 [IPsec VPN](https://github.com/libreswan/libreswan/issues?q=is%3Aissue) 或者 [VPN 脚本](https://github.com/hwdsl2/setup-ipsec-vpn/issues/new/choose) 提交一个错误报告。
-- 有问题需要提问？请先搜索 [已有的 issues](https://github.com/hwdsl2/setup-ipsec-vpn/issues?q=is%3Aissue) 以及在 [这个 Gist](https://gist.github.com/hwdsl2/9030462#comments) 和 [我的博客](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#disqus_thread) 上已有的留言。
+- 如果你有对本项目的建议，请提交一个 [改进建议](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/new/choose)，或者欢迎提交 [Pull request](https://github.com/vpn-wiki/setup-ipsec-vpn/pulls)。
+- 如果你发现了一个可重复的程序漏洞，请为 [IPsec VPN](https://github.com/libreswan/libreswan/issues?q=is%3Aissue) 或者 [VPN 脚本](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/new/choose) 提交一个错误报告。
+- 有问题需要提问？请先搜索 [已有的 issues](https://github.com/vpn-wiki/setup-ipsec-vpn/issues?q=is%3Aissue) 以及在 [这个 Gist](https://gist.github.com/hwdsl2/9030462#comments) 和 [我的博客](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#disqus_thread) 上已有的留言。
 - VPN 的相关问题可在 [Libreswan](https://lists.libreswan.org/mailman/listinfo/swan) 或 [strongSwan](https://lists.strongswan.org/mailman/listinfo/users) 邮件列表提问，或者参考这些网站：[[1]](https://libreswan.org/wiki/Main_Page) [[2]](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide/sec-securing_virtual_private_networks) [[3]](https://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation) [[4]](https://wiki.gentoo.org/wiki/IPsec_L2TP_VPN_server) [[5]](https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup)。
 
 ## 授权协议

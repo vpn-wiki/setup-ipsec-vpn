@@ -1,5 +1,5 @@
 [English](ikev2-howto.md) | [中文](ikev2-howto-zh.md)
-[![](https://github.com/vpn-wiki/fanqiang/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
+[![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
 # Guide: How to Set Up and Use IKEv2 VPN
 
@@ -493,7 +493,7 @@ You can then set up and enable the VPN connection:
 1. Click **Add** to save the VPN connection information.
 1. Turn the **VPN** switch ON.
 
-Alternatively, you may connect using the command line. See [#1399](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1399) and [#1007](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1007) for example steps. If you encounter error `Could not find source connection`, edit `/etc/netplan/01-netcfg.yaml` and replace `renderer: networkd` with `renderer: NetworkManager`, then run `sudo netplan apply`. To connect to the VPN, run `sudo nmcli c up VPN`. To disconnect: `sudo nmcli c down VPN`.
+Alternatively, you may connect using the command line. See [#1399](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1399) and [#1007](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1007) for example steps. If you encounter error `Could not find source connection`, edit `/etc/netplan/01-netcfg.yaml` and replace `renderer: networkd` with `renderer: NetworkManager`, then run `sudo netplan apply`. To connect to the VPN, run `sudo nmcli c up VPN`. To disconnect: `sudo nmcli c down VPN`.
 
 Once connected, you can verify that your traffic is being routed properly by [looking up your IP address on Google](https://www.google.com/search?q=my+ip). It should say "Your public IP address is `Your VPN Server IP`".
 
@@ -567,7 +567,7 @@ for the entire network, or use `192.168.0.10` for just one device, and so on.
        peer=ike2-rw-client policy-template-group=ike2-rw
    /ip ipsec policy add group=ike2-rw proposal=ike2-rw template=yes
    ```
-4. For more information, see [#1112](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1112#issuecomment-1059628623).
+4. For more information, see [#1112](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1112#issuecomment-1059628623).
 
 > tested on   
 > mar/02/2022 12:52:57 by RouterOS 6.48   
@@ -594,19 +594,19 @@ for the entire network, or use `192.168.0.10` for just one device, and so on.
 
 First, make sure that the VPN server address specified on your VPN client device **exactly matches** the server address in the output of the IKEv2 helper script. For example, you cannot use a DNS name to connect if it was not specified when setting up IKEv2. To change the IKEv2 server address, read [this section](#change-ikev2-server-address).
 
-For servers with an external firewall (e.g. [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)), open UDP ports 500 and 4500 for the VPN. Aliyun users, see [#433](https://github.com/hwdsl2/setup-ipsec-vpn/issues/433).
+For servers with an external firewall (e.g. [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)), open UDP ports 500 and 4500 for the VPN. Aliyun users, see [#433](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/433).
 
 [Check logs and VPN status](clients.md#check-logs-and-vpn-status) for errors. If you encounter retransmission related errors and are unable to connect, there may be network issues between the VPN client and server. If you are connecting from mainland China, consider switching to alternative solutions other than IPsec VPN.
 
 ### Ubuntu 20.04 cannot import client config
 
-If you installed the IPsec VPN before 2024-04-10, and your VPN server runs Ubuntu Linux version 20.04, you may have encountered an issue where newly generated client configuration files (`.mobileconfig`) fail to import on iOS or macOS device(s) with errors like "incorrect password". This could be caused by updates to libnss3 related packages on Ubuntu 20.04, which required some changes ([25670f3](https://github.com/hwdsl2/setup-ipsec-vpn/commit/25670f3)) in the IKEv2 script.
+If you installed the IPsec VPN before 2024-04-10, and your VPN server runs Ubuntu Linux version 20.04, you may have encountered an issue where newly generated client configuration files (`.mobileconfig`) fail to import on iOS or macOS device(s) with errors like "incorrect password". This could be caused by updates to libnss3 related packages on Ubuntu 20.04, which required some changes ([25670f3](https://github.com/vpn-wiki/setup-ipsec-vpn/commit/25670f3)) in the IKEv2 script.
 
 To fix this issue, first update the IKEv2 script on your server to the latest version using [these instructions](#update-ikev2-helper-script). After that, run `sudo ikev2.sh` and select "export" to re-create the client configuration files.
 
 ### macOS Sonoma clients reconnect
 
-macOS 14 (Sonoma) has [a minor issue](https://github.com/hwdsl2/setup-ipsec-vpn/issues/1486) that may cause IKEv2 VPN to disconnect and reconnect once every 24-48 minutes. Other macOS versions are not affected. First [check your macOS version](https://support.apple.com/en-us/HT201260). To work around this issue, follow the steps below.
+macOS 14 (Sonoma) has [a minor issue](https://github.com/vpn-wiki/setup-ipsec-vpn/issues/1486) that may cause IKEv2 VPN to disconnect and reconnect once every 24-48 minutes. Other macOS versions are not affected. First [check your macOS version](https://support.apple.com/en-us/HT201260). To work around this issue, follow the steps below.
 
 **Note:** If you installed IPsec VPN after December 10, 2023, no action is required because the following fixes are already included.
 
@@ -904,7 +904,7 @@ sudo bash ikev2addr.sh
 
 ## Update IKEv2 helper script
 
-The IKEv2 helper script is updated from time to time for bug fixes and improvements ([commit log](https://github.com/hwdsl2/setup-ipsec-vpn/commits/master/extras/ikev2setup.sh)). When a newer version is available, you may optionally update the IKEv2 helper script on your server. Note that these commands will overwrite any existing `ikev2.sh`.
+The IKEv2 helper script is updated from time to time for bug fixes and improvements ([commit log](https://github.com/vpn-wiki/setup-ipsec-vpn/commits/master/extras/ikev2setup.sh)). When a newer version is available, you may optionally update the IKEv2 helper script on your server. Note that these commands will overwrite any existing `ikev2.sh`.
 
 ```bash
 wget https://get.vpnsetup.net/ikev2 -O /opt/src/ikev2.sh
