@@ -361,7 +361,7 @@ get_helper_scripts() {
 }
 
 get_swan_ver() {
-  SWAN_VER=5.0
+  SWAN_VER=5.1
   base_url="https://github.com/hwdsl2/vpn-extras/releases/download/v1.0.0"
   swan_ver_url="$base_url/v1-$os_type-$os_ver-swanver"
   swan_ver_latest=$(wget -t 2 -T 10 -qO- "$swan_ver_url" | head -n 1)
@@ -693,9 +693,7 @@ apply_gcp_mtu_fix() {
 enable_on_boot() {
   bigecho "Enabling services on boot..."
   systemctl --now mask firewalld 2>/dev/null
-  if [ "$os_type$os_ver" = "ol9" ]; then
-    systemctl enable nftables 2>/dev/null
-  elif [ "$use_nft" = 1 ]; then
+  if [ "$use_nft" = 1 ]; then
     systemctl enable nftables 2>/dev/null
     systemctl enable fail2ban 2>/dev/null
   else
@@ -728,6 +726,9 @@ start_services() {
   restorecon /usr/local/sbin -Rv 2>/dev/null
   restorecon /usr/local/libexec/ipsec -Rv 2>/dev/null
   if [ "$use_nft" = 1 ]; then
+    if ! nft -c -f "$IPT_FILE" >/dev/null 2>&1; then
+      sed -i '/ip6 saddr fddd:\(2c4\|1194\):/s/xt target "MASQUERADE"/masquerade/' "$IPT_FILE"
+    fi
     nft -f "$IPT_FILE"
   else
     iptables-restore < "$IPT_FILE"
@@ -820,9 +821,7 @@ vpnsetup() {
   install_vpn_pkgs_1
   install_vpn_pkgs_2
   install_vpn_pkgs_3
-  if [ "$os_type$os_ver" != "ol9" ]; then
-    install_fail2ban
-  fi
+  install_fail2ban
   get_helper_scripts
   get_libreswan
   install_libreswan
