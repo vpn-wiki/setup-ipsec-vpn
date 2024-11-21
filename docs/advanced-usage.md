@@ -186,7 +186,7 @@ The example below **ONLY** applies to IKEv2 mode. Commands must be run as `root`
 
    **Note:** Add a new `conn` section for each client that you want to assign a static IP to. You must add a `@` prefix to the client name for `rightid=`. The client name must exactly match the name you specified when [adding the client certificate](ikev2-howto.md#add-a-client-certificate). The assigned static IP(s) must be from the subnet `192.168.43.0/24`, and must NOT be from the pool of auto-assigned IPs (see `rightaddresspool` above). In the example above, you can only assign static IP(s) from the range `192.168.43.1-192.168.43.99`.
 
-   **Note:** For Windows 7/8/10/11 clients, you must use a different syntax for `rightid=`. For example, if the client name is `client1`, set `rightid="CN=client1, O=IKEv2 VPN"` in the example above.
+   **Note:** For Windows 7/8/10/11 and [RouterOS](ikev2-howto.md#routeros) clients, you must use a different syntax for `rightid=`. For example, if the client name is `client1`, set `rightid="CN=client1, O=IKEv2 VPN"` in the example above.
 1. **(Important)** Restart the IPsec service:
    ```
    service ipsec restart
@@ -286,7 +286,7 @@ If you want the rules to persist after reboot, you may add these commands to `/e
 
 ## Split tunneling
 
-With split tunneling, VPN clients will only send traffic for a specific destination subnet through the VPN tunnel. Other traffic will NOT go through the VPN tunnel. This allows you to gain secure access to a network through your VPN, without routing all your client's traffic through the VPN. Split tunneling has some limitations, and is not supported by all VPN clients.
+With split tunneling, VPN clients will only send traffic for specific destination subnet(s) through the VPN tunnel. Other traffic will NOT go through the VPN tunnel. This allows you to gain secure access to a network through your VPN, without routing all your client's traffic through the VPN. Split tunneling has some limitations, and is not supported by all VPN clients.
 
 Advanced users can optionally enable split tunneling for the [IPsec/XAuth ("Cisco IPsec")](clients-xauth.md) and/or [IKEv2](ikev2-howto.md) modes. Expand for details. IPsec/L2TP mode does not support this feature (except on Windows, see below).
 
@@ -297,9 +297,14 @@ IPsec/XAuth ("Cisco IPsec") mode: Enable split tunneling
 
 The example below **ONLY** applies to IPsec/XAuth ("Cisco IPsec") mode. Commands must be run as `root`.
 
-1. Edit `/etc/ipsec.conf` on the VPN server. In the section `conn xauth-psk`, replace `leftsubnet=0.0.0.0/0` with the subnet you want VPN clients to send traffic through the VPN tunnel. For example:   
+1. Edit `/etc/ipsec.conf` on the VPN server. In the section `conn xauth-psk`, replace `leftsubnet=0.0.0.0/0` with the subnet(s) you want VPN clients to send traffic through the VPN tunnel. For example:   
+   For a single subnet:
    ```
    leftsubnet=10.123.123.0/24
+   ```
+   For multiple subnets (use `leftsubnets` instead):
+   ```
+   leftsubnets="10.123.123.0/24,10.100.0.0/16"
    ```
 1. **(Important)** Restart the IPsec service:
    ```
@@ -314,9 +319,14 @@ IKEv2 mode: Enable split tunneling
 
 The example below **ONLY** applies to IKEv2 mode. Commands must be run as `root`.
 
-1. Edit `/etc/ipsec.d/ikev2.conf` on the VPN server. In the section `conn ikev2-cp`, replace `leftsubnet=0.0.0.0/0` with the subnet you want VPN clients to send traffic through the VPN tunnel. For example:   
+1. Edit `/etc/ipsec.d/ikev2.conf` on the VPN server. In the section `conn ikev2-cp`, replace `leftsubnet=0.0.0.0/0` with the subnet(s) you want VPN clients to send traffic through the VPN tunnel. For example:   
+   For a single subnet:
    ```
    leftsubnet=10.123.123.0/24
+   ```
+   For multiple subnets (use `leftsubnets` instead):
+   ```
+   leftsubnets="10.123.123.0/24,10.100.0.0/16"
    ```
 1. **(Important)** Restart the IPsec service:
    ```
