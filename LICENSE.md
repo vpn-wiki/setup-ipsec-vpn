@@ -2,7 +2,7 @@
 [![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 Link to license summary: https://creativecommons.org/licenses/by-sa/3.0/
 
-Copyright (C) 2014-2024 [Lin Song](https://github.com/hwdsl2)   
+Copyright (C) 2014-2025 [Lin Song](https://github.com/hwdsl2)   
 Based on [the work of Thomas Sarlandie](https://github.com/sarfata/voodooprivacy) (Copyright 2012)
 
 See the [aws/](aws/) and [azure/](azure/) subfolders for their respective authors.
