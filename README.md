@@ -11,7 +11,7 @@ An IPsec VPN encrypts your network traffic, so that nobody between you and the V
 
 We will use [Libreswan](https://libreswan.org/) as the IPsec server, and [xl2tpd](https://github.com/xelerance/xl2tpd) as the L2TP provider.
 
-**[&raquo; :book: Book: Build Your Own VPN Server](https://books2read.com/vpnguide?store=amazon)** [[Intro Video](https://www.tiktok.com/@annalisereads/video/7478816401462005023) | [English](https://books2read.com/vpnguide?store=amazon) | [中文](https://books2read.com/vpnguidezh) | [ES](https://books2read.com/vpnguidees?store=amazon) | [DE](https://books2read.com/vpnguidede?store=amazon) | [FR](https://books2read.com/vpnguidefr?store=amazon) | [IT](https://books2read.com/vpnguideit?store=amazon) | [NL](https://books2read.com/vpnguidenl?store=amazon) | [PT](https://books2read.com/vpnguidept?store=amazon) | [日本語](https://books2read.com/vpnguideja?store=amazon)]
+**[&raquo; :book: Book: Build Your Own VPN Server](docs/vpn-book.md)** [[English](https://books2read.com/vpnguide?store=amazon) | [中文](https://books2read.com/vpnguidezh) | [Español](https://books2read.com/vpnguidees?store=amazon) | [Deutsch](https://books2read.com/vpnguidede?store=amazon) | [Français](https://books2read.com/vpnguidefr?store=amazon) | [Italiano](https://books2read.com/vpnguideit?store=amazon) | [NL](https://books2read.com/vpnguidenl?store=amazon) | [PT](https://books2read.com/vpnguidept?store=amazon) | [日本語](https://books2read.com/vpnguideja?store=amazon)]
 
 ## Quick start
 
@@ -313,7 +313,7 @@ Get your computer or device to use the VPN. Please refer to:
 
 **[Configure IPsec/XAuth ("Cisco IPsec") VPN Clients](docs/clients-xauth.md)**
 
-**Read [:book: VPN book](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-O5O7FVF8J) to access [extra content](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-O5O7FVF8J).**
+**Read [:book: VPN book](docs/vpn-book.md) to access [extra content](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-O5O7FVF8J).**
 
 Enjoy your very own VPN! :sparkles::tada::rocket::sparkles:
 
