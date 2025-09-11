@@ -70,8 +70,8 @@ check_os() {
       ;;
   esac
   os_ver=$(. /etc/os-release && printf '%s' "$VERSION_ID" | cut -d '.' -f 1,2)
-  if [ "$os_ver" != "3.20" ] && [ "$os_ver" != "3.21" ]; then
-    exiterr "This script only supports Alpine Linux 3.20/3.21."
+  if [ "$os_ver" != "3.21" ] && [ "$os_ver" != "3.22" ]; then
+    exiterr "This script only supports Alpine Linux 3.21/3.22."
   fi
 }
 
@@ -353,10 +353,8 @@ conn shared
   authby=secret
   pfs=no
   rekey=no
-  keyingtries=5
   dpddelay=30
   dpdtimeout=300
-  dpdaction=clear
   ikev2=never
   ike=aes256-sha2;modp2048,aes128-sha2;modp2048,aes256-sha1;modp2048,aes128-sha1;modp2048
   phase2alg=aes_gcm-null,aes128-sha1,aes256-sha1,aes256-sha2_512,aes128-sha2,aes256-sha2
