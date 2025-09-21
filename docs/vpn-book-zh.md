@@ -1,9 +1,15 @@
 [&laquo; 返回主页](../README-zh.md) | [English](vpn-book.md) | [中文](vpn-book-zh.md)
 [![](https://github.com/vpn-wiki/setup-ipsec-vpn/blob/master/vpn-wiki/clever-vpn.png)](https://www.clever-vpn.net)
 
+## 新：Privacy in the Age of AI
+
+了解如何在人工智能时代构建更高级别的隐私保护。在 [Amazon](https://books2read.com/privacy?store=amazon) 上提供本书英文版的电子书、平装本和有声读物格式。
+
+作者页面：https://amazon.com/author/linsong
+
 ## 搭建自己的 VPN 服务器分步指南
 
-本书是搭建你自己的 IPsec VPN, OpenVPN 和 WireGuard 服务器的**分步指南**。在 [Amazon](https://books2read.com/vpnguidezh?store=amazon)、[Google Play](https://books2read.com/vpnguidezh?store=google) 和 [Apple Books](https://books2read.com/vpnguidezh?store=apple) 上提供电子书、平装本和有声读物格式。
+本书是搭建你自己的 IPsec VPN, OpenVPN 和 WireGuard 服务器的**分步指南**。在 [Amazon](https://books2read.com/vpnguidezh?store=amazon)、[Google Play](https://books2read.com/vpnguidezh?store=google)、[Apple Books](https://books2read.com/vpnguidezh?store=apple) 和 [Hoopla](https://books2read.com/vpnguide?store=hoopla) 上提供电子书、平装本和有声读物格式。
 
 **注：** 单击表格中的 ✅ 标记即可转到选定的书籍。
 
@@ -14,8 +20,6 @@
 | Apple Books | [✅](https://books2read.com/vpnguide?store=apple) | [✅](https://books2read.com/vpnguidezh?store=apple) | [✅](https://books2read.com/vpnguidezht?store=apple) | [✅](https://books2read.com/vpnguidees?store=apple) | [✅](https://books2read.com/vpnguidede?store=apple) | [✅](https://books2read.com/vpnguidefr?store=apple) | [✅](https://books2read.com/vpnguideit?store=apple) | [✅](https://books2read.com/vpnguidenl?store=apple) | [✅](https://books2read.com/vpnguidept?store=apple) | |
 | 有声读物 | [✅](https://books2read.com/vpnguide?store=audible-audio&format=AUDIOBOOK) | | | [✅](https://books2read.com/vpnguidees?store=audible-audio&format=AUDIOBOOK) | [✅](https://books2read.com/vpnguidede?store=google-audio&format=AUDIOBOOK) | [✅](https://books2read.com/vpnguidefr?store=audible-audio&format=AUDIOBOOK) | [✅](https://books2read.com/vpnguideit?store=audible-audio&format=AUDIOBOOK) | | [✅](https://books2read.com/vpnguidept?store=google-audio&format=AUDIOBOOK) | |
 | 其他平台 | [✅](https://books2read.com/vpnguide) | [✅](https://books2read.com/vpnguidezh) | [✅](https://books2read.com/vpnguidezht) | [✅](https://books2read.com/vpnguidees) | [✅](https://books2read.com/vpnguidede) | [✅](https://books2read.com/vpnguidefr) | [✅](https://books2read.com/vpnguideit) | [✅](https://books2read.com/vpnguidenl) | [✅](https://books2read.com/vpnguidept) | [✅](https://books2read.com/vpnguideja) |
-
-作者页面：https://amazon.com/author/linsong
 
 ## VPN 服务器完整指南：在云端搭建自己的 VPN
 
