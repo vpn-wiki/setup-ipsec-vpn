@@ -34,15 +34,3 @@
 | Apple Books | [✅](https://books2read.com/vpn?store=apple) | [✅](https://books2read.com/vpnzh?store=apple) | [✅](https://books2read.com/vpnzht?store=apple) | [✅](https://books2read.com/vpnes?store=apple) | [✅](https://books2read.com/vpnde?store=apple) | [✅](https://books2read.com/vpnfr?store=apple) | [✅](https://books2read.com/vpnit?store=apple) | |
 | 有声读物 | [✅](https://books2read.com/vpn?store=audible-audio&format=AUDIOBOOK) | | | [✅](https://books2read.com/vpnes?store=audible-audio&format=AUDIOBOOK) | | [✅](https://books2read.com/vpnfr?store=audible-audio&format=AUDIOBOOK) | [✅](https://books2read.com/vpnit?store=audible-audio&format=AUDIOBOOK) | |
 | 其他平台 | [✅](https://books2read.com/vpn) | [✅](https://books2read.com/vpnzh) | [✅](https://books2read.com/vpnzht) | [✅](https://books2read.com/vpnes) | [✅](https://books2read.com/vpnde) | [✅](https://books2read.com/vpnfr) | [✅](https://books2read.com/vpnit) | [✅](https://books2read.com/vpnja) |
-
-## 书籍介绍视频
-
-<details>
-<summary>
-点这里查看书籍介绍视频（YouTube）。
-</summary>
-
-[![Intro video 1 on YouTube](images/video-thumbnail-1.jpg)](https://www.youtube.com/watch?v=e5mbQCk-XPc)
-
-[![Intro video 2 on YouTube](images/video-thumbnail-2.jpg)](https://www.youtube.com/watch?v=e8S_MQ_bdcA)
-</details>
