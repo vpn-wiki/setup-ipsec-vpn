@@ -9,6 +9,7 @@
 * [Internal VPN IPs and traffic](#internal-vpn-ips-and-traffic)
 * [Specify VPN server's public IP](#specify-vpn-servers-public-ip)
 * [Customize VPN subnets](#customize-vpn-subnets)
+* [IPv6 support](#ipv6-support)
 * [Port forwarding to VPN clients](#port-forwarding-to-vpn-clients)
 * [Split tunneling](#split-tunneling)
 * [Access VPN server's subnet](#access-vpn-servers-subnet)
@@ -258,6 +259,38 @@ sh vpn.sh
 
 In the examples above, `VPN_L2TP_LOCAL` is the VPN server's internal IP for IPsec/L2TP mode. `VPN_L2TP_POOL` and `VPN_XAUTH_POOL` are the pools of auto-assigned IP addresses for VPN clients.
 
+## IPv6 support
+
+If your VPN server has a public (global unicast) IPv6 address and the requirements below are met, IPv6 support for IKEv2 clients is automatically enabled during VPN setup. No manual configuration is needed.
+
+**Note:** IPv6 support has been tested on Android using the strongSwan VPN client. Other platforms (e.g. Windows, macOS, iOS) may have limitations or require additional configuration for IPv6 to work over the IKEv2 VPN.
+
+**Note:** For **Windows** clients, you need to run the following commands once in a PowerShell window to route IPv6 traffic through the VPN. Replace `IKEv2 VPN X.X.X.X` with the actual name of your VPN connection. When finished, reconnect to the IKEv2 VPN.
+
+```powershell
+Add-VpnConnectionRoute -ConnectionName "IKEv2 VPN X.X.X.X" -DestinationPrefix ::/1
+Add-VpnConnectionRoute -ConnectionName "IKEv2 VPN X.X.X.X" -DestinationPrefix 8000::/1
+```
+
+When IPv6 is enabled, IKEv2 VPN clients receive both an IPv4 address from the `192.168.43.0/24` pool and an IPv6 address from the `fddd:500:500:500::/64` pool. The VPN server masquerades IPv6 traffic from the client pool through the server's own IPv6 address, giving VPN clients full IPv6 internet access through the tunnel.
+
+**Requirements:**
+- The VPN server must have a routable global unicast IPv6 address (i.e., an address starting with `2` or `3`). Link-local (`fe80::/10`) and ULA (`fc00::/7`) addresses are not sufficient.
+- Libreswan 5.0 or newer (the VPN setup scripts use 5.x by default).
+- IPv6 is only supported for **IKEv2 mode**. IPsec/L2TP and IPsec/XAuth ("Cisco IPsec") modes do not support IPv6.
+
+To verify that IPv6 is working, connect to the VPN using IKEv2 and check your IPv6 address, e.g. using [test-ipv6.com](https://test-ipv6.com).
+
+You may optionally specify a custom IPv6 pool subnet when installing the VPN. The subnet must be a `/64` from the ULA range (`fddd::/16` is recommended).
+
+```
+# Example: Specify custom IPv6 pool subnet for IKEv2 mode
+sudo VPN_IP6_NET=fddd:1234:5678:9012::/64 \
+sh vpn.sh
+```
+
+**Note:** The `VPN_IP6_NET` variable may only be specified during initial VPN install.
+
 ## Port forwarding to VPN clients
 
 In certain circumstances, you may want to forward port(s) on the VPN server to a connected VPN client. This can be done by adding IPTables rules on the VPN server.
@@ -402,6 +435,8 @@ Learn more about internal VPN IPs in [Internal VPN IPs and traffic](#internal-vp
 
 If you want to modify IPTables rules after install, edit `/etc/iptables.rules` and/or `/etc/iptables/rules.v4` (Ubuntu/Debian), or `/etc/sysconfig/iptables` (CentOS/RHEL). Then reboot your server.
 
+If [IPv6 support](#ipv6-support) is enabled, the corresponding ip6tables rules are saved in `/etc/ip6tables.rules` and `/etc/iptables/rules.v6` (Ubuntu/Debian), or `/etc/sysconfig/ip6tables` (CentOS/RHEL).
+
 **Note:** If your server runs CentOS Linux (or similar), and firewalld was active during VPN setup, nftables may be configured. In this case, edit `/etc/sysconfig/nftables.conf` instead of `/etc/sysconfig/iptables`.
 
 ## Deploy Google BBR congestion control
@@ -414,7 +449,7 @@ For detailed deployment methods, please refer to [this document](bbr.md).
 
 ## License
 
-Copyright (C) 2021-2025 [Lin Song](https://github.com/hwdsl2) [![View my profile on LinkedIn](https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png)](https://www.linkedin.com/in/linsongui)   
+Copyright (C) 2021-2026 [Lin Song](https://github.com/hwdsl2) [![View my profile on LinkedIn](https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png)](https://www.linkedin.com/in/linsongui)   
 
 [![Creative Commons License](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)](http://creativecommons.org/licenses/by-sa/3.0/)   
 This work is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)  

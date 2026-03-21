@@ -5,7 +5,7 @@
 # The latest version of this script is available at:
 # https://github.com/hwdsl2/setup-ipsec-vpn
 #
-# Copyright (C) 2021-2025 Lin Song <linsongui@gmail.com>
+# Copyright (C) 2021-2026 Lin Song <linsongui@gmail.com>
 #
 # This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 # Unported License: http://creativecommons.org/licenses/by-sa/3.0/
@@ -143,7 +143,7 @@ install_pkgs() {
   bigecho "Installing required packages..."
   (
     set -x
-    apk add -U -q bash bind-tools coreutils openssl wget iptables iproute2 \
+    apk add -U -q bash bind-tools coreutils openssl wget iptables ip6tables iproute2 \
     sed grep libcap-ng libcurl libevent linux-pam musl nspr nss nss-tools \
     bison flex gcc make libc-dev bsd-compat-headers linux-pam-dev nss-dev \
     libcap-ng-dev libevent-dev curl-dev nspr-dev uuidgen openrc

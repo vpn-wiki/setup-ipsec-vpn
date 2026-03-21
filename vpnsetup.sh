@@ -8,7 +8,7 @@
 # The latest version of this script is available at:
 # https://github.com/hwdsl2/setup-ipsec-vpn
 #
-# Copyright (C) 2021-2025 Lin Song <linsongui@gmail.com>
+# Copyright (C) 2021-2026 Lin Song <linsongui@gmail.com>
 #
 # This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 # Unported License: http://creativecommons.org/licenses/by-sa/3.0/
@@ -123,8 +123,8 @@ EOF
     esac
     if [ "$os_type" = "alpine" ]; then
       os_ver=$(. /etc/os-release && printf '%s' "$VERSION_ID" | cut -d '.' -f 1,2)
-      if [ "$os_ver" != "3.21" ] && [ "$os_ver" != "3.22" ]; then
-        exiterr "This script only supports Alpine Linux 3.21/3.22."
+      if [ "$os_ver" != "3.22" ] && [ "$os_ver" != "3.23" ]; then
+        exiterr "This script only supports Alpine Linux 3.22/3.23."
       fi
     else
       os_ver=$(sed 's/\..*//' /etc/debian_version | tr -dc 'A-Za-z0-9')
@@ -282,6 +282,7 @@ run_setup() {
       VPN_PROTECT_CONFIG="$VPN_PROTECT_CONFIG" \
       VPN_CLIENT_VALIDITY="$VPN_CLIENT_VALIDITY" \
       VPN_SKIP_IKEV2="$VPN_SKIP_IKEV2" VPN_SWAN_VER="$VPN_SWAN_VER" \
+      VPN_PUBLIC_IP6="$VPN_PUBLIC_IP6" VPN_IP6_NET="$VPN_IP6_NET" \
       /bin/bash "$tmpdir/vpn.sh" || status=1
     else
       status=1
