@@ -11,9 +11,19 @@ IPsec VPN шифрует сетевой трафик, поэтому никто 
 
 Мы будем использовать [Libreswan](https://libreswan.org/) в качестве сервера IPsec и [xl2tpd](https://github.com/xelerance/xl2tpd) в качестве поставщика L2TP.
 
-**Также доступно:** Docker-образы для [WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/README-ru.md), [OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/README-ru.md), [Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/README-ru.md) и [LiteLLM](https://github.com/hwdsl2/docker-litellm/blob/main/README-ru.md).
+**Возможности:**
 
-**[&raquo; :book: Книга: Privacy Tools in the Age of AI](docs/vpn-book.md) &nbsp;[Build Your Own VPN Server](docs/vpn-book.md)**
+- Полностью автоматическая настройка сервера IPsec VPN, ввод пользователя не требуется
+- Поддержка IKEv2 с мощными и быстрыми шифрами (например, AES-GCM)
+- Генерация профилей VPN для автоматической настройки устройств iOS, macOS и Android
+- Поддержка Windows, macOS, iOS, Android, Chrome OS и Linux в качестве VPN-клиентов
+- Включает вспомогательные скрипты для управления пользователями VPN и сертификатами
+
+**Также доступно:**
+
+- Docker VPN: [WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/README-ru.md), [OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/README-ru.md), [IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-ru.md), [Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/README-ru.md)
+- Docker ИИ/Аудио: [Whisper (STT)](https://github.com/hwdsl2/docker-whisper/blob/main/README-ru.md), [Kokoro (TTS)](https://github.com/hwdsl2/docker-kokoro/blob/main/README-ru.md), [Embeddings](https://github.com/hwdsl2/docker-embeddings/blob/main/README-ru.md), [LiteLLM](https://github.com/hwdsl2/docker-litellm/blob/main/README-ru.md)
+- :book: Книга: [Privacy Tools in the Age of AI](docs/vpn-book.md), [Build Your Own VPN Server](docs/vpn-book.md)
 
 ## Быстрый старт
 
@@ -63,14 +73,6 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/vpnsetup.sh
 Также доступен готовый [образ Docker](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-ru.md) для IPsec VPN. Для других вариантов и настройки клиентов прочитайте разделы ниже.
 
 \* Облачный сервер, виртуальный частный сервер (VPS) или выделенный сервер.
-
-## Возможности
-
-- Полностью автоматическая настройка сервера IPsec VPN, ввод пользователя не требуется
-- Поддержка IKEv2 с мощными и быстрыми шифрами (например, AES-GCM)
-- Генерация профилей VPN для автоматической настройки устройств iOS, macOS и Android
-- Поддержка Windows, macOS, iOS, Android, Chrome OS и Linux в качестве VPN-клиентов
-- Включает вспомогательные скрипты для управления пользователями VPN и сертификатами
 
 ## Требования
 
@@ -387,6 +389,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 - [Использование альтернативных DNS-серверов](docs/advanced-usage.md#use-alternative-dns-servers)
 - [Изменения DNS-имени и IP-адреса сервера](docs/advanced-usage.md#dns-name-and-server-ip-changes)
 - [VPN только с IKEv2](docs/advanced-usage.md#ikev2-only-vpn)
+- [Включить совершенную прямую секретность IKEv2](docs/advanced-usage.md#enable-ikev2-perfect-forward-secrecy)
 - [Внутренние IP-адреса VPN и трафик](docs/advanced-usage.md#internal-vpn-ips-and-traffic)
 - [Указание публичного IP-адреса VPN-сервера](docs/advanced-usage.md#specify-vpn-servers-public-ip)
 - [Настройка подсетей VPN](docs/advanced-usage.md#customize-vpn-subnets)

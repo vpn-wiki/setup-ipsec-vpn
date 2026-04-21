@@ -11,9 +11,19 @@ An IPsec VPN encrypts your network traffic, so that nobody between you and the V
 
 We will use [Libreswan](https://libreswan.org/) as the IPsec server, and [xl2tpd](https://github.com/xelerance/xl2tpd) as the L2TP provider.
 
-**Also available:** Docker images for [WireGuard](https://github.com/hwdsl2/docker-wireguard), [OpenVPN](https://github.com/hwdsl2/docker-openvpn), [Headscale](https://github.com/hwdsl2/docker-headscale) and [LiteLLM](https://github.com/hwdsl2/docker-litellm).
+**Features:**
 
-**[&raquo; :book: Book: Privacy Tools in the Age of AI](docs/vpn-book.md) &nbsp;[Build Your Own VPN Server](docs/vpn-book.md)**
+- Fully automated IPsec VPN server setup, no user input needed
+- Supports IKEv2 with strong and fast ciphers (e.g. AES-GCM)
+- Generates VPN profiles to auto-configure iOS, macOS and Android devices
+- Supports Windows, macOS, iOS, Android, Chrome OS and Linux as VPN clients
+- Includes helper scripts to manage VPN users and certificates
+
+**Also available:**
+
+- Docker VPN: [WireGuard](https://github.com/hwdsl2/docker-wireguard), [OpenVPN](https://github.com/hwdsl2/docker-openvpn), [IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server), [Headscale](https://github.com/hwdsl2/docker-headscale)
+- Docker AI/Audio: [Whisper (STT)](https://github.com/hwdsl2/docker-whisper), [Kokoro (TTS)](https://github.com/hwdsl2/docker-kokoro), [Embeddings](https://github.com/hwdsl2/docker-embeddings), [LiteLLM](https://github.com/hwdsl2/docker-litellm)
+- :book: Book: [Privacy Tools in the Age of AI](docs/vpn-book.md), [Build Your Own VPN Server](docs/vpn-book.md)
 
 ## Quick start
 
@@ -63,14 +73,6 @@ If you are unable to download, open [vpnsetup.sh](vpnsetup.sh), then click the `
 A pre-built [Docker image](https://github.com/hwdsl2/docker-ipsec-vpn-server) is also available. For other options and client setup, read the sections below.
 
 \* A cloud server, virtual private server (VPS) or dedicated server.
-
-## Features
-
-- Fully automated IPsec VPN server setup, no user input needed
-- Supports IKEv2 with strong and fast ciphers (e.g. AES-GCM)
-- Generates VPN profiles to auto-configure iOS, macOS and Android devices
-- Supports Windows, macOS, iOS, Android, Chrome OS and Linux as VPN clients
-- Includes helper scripts to manage VPN users and certificates
 
 ## Requirements
 
@@ -387,6 +389,7 @@ See [Advanced usage](docs/advanced-usage.md).
 - [Use alternative DNS servers](docs/advanced-usage.md#use-alternative-dns-servers)
 - [DNS name and server IP changes](docs/advanced-usage.md#dns-name-and-server-ip-changes)
 - [IKEv2-only VPN](docs/advanced-usage.md#ikev2-only-vpn)
+- [Enable IKEv2 perfect forward secrecy](docs/advanced-usage.md#enable-ikev2-perfect-forward-secrecy)
 - [Internal VPN IPs and traffic](docs/advanced-usage.md#internal-vpn-ips-and-traffic)
 - [Specify VPN server's public IP](docs/advanced-usage.md#specify-vpn-servers-public-ip)
 - [Customize VPN subnets](docs/advanced-usage.md#customize-vpn-subnets)
