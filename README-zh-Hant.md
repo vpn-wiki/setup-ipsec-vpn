@@ -22,7 +22,7 @@ IPsec VPN 可以加密你的網路流量，以防止在透過網際網路傳送�
 **另提供：**
 
 - Docker VPN：[WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/README-zh-Hant.md)、[IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh-Hant.md)、[Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/README-zh-Hant.md)
-- Docker AI/音訊：[Whisper (STT)](https://github.com/hwdsl2/docker-whisper/blob/main/README-zh-Hant.md)、[Kokoro (TTS)](https://github.com/hwdsl2/docker-kokoro/blob/main/README-zh-Hant.md)、[Embeddings](https://github.com/hwdsl2/docker-embeddings/blob/main/README-zh-Hant.md)、[LiteLLM](https://github.com/hwdsl2/docker-litellm/blob/main/README-zh-Hant.md)
+- Docker AI/音訊：[Whisper (STT)](https://github.com/hwdsl2/docker-whisper/blob/main/README-zh-Hant.md)、[Kokoro (TTS)](https://github.com/hwdsl2/docker-kokoro/blob/main/README-zh-Hant.md)、[Embeddings](https://github.com/hwdsl2/docker-embeddings/blob/main/README-zh-Hant.md)、[LiteLLM](https://github.com/hwdsl2/docker-litellm/blob/main/README-zh-Hant.md)、[Ollama](https://github.com/hwdsl2/docker-ollama/blob/main/README-zh-Hant.md)
 - :book: Book：[Privacy Tools in the Age of AI](docs/vpn-book-zh-Hant.md)、[架設自己的 VPN 伺服器](docs/vpn-book-zh-Hant.md)
 
 ## 快速開始
@@ -78,7 +78,7 @@ IPsec VPN 也提供預先建構的 [Docker 映像](https://github.com/hwdsl2/doc
 
 一個雲端伺服器、虛擬專用伺服器 (VPS) 或專用伺服器，安裝以下作業系統之一：
 
-- Ubuntu 24.04 或 22.04
+- Ubuntu 26.04、24.04 或 22.04
 - Debian 13、12 或 11
 - CentOS Stream 10 或 9
 - Rocky Linux 或 AlmaLinux
