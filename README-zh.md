@@ -74,6 +74,12 @@ IPsec VPN 也提供预构建的 [Docker 镜像](https://github.com/hwdsl2/docker
 
 \* 一个云服务器，虚拟专用服务器 (VPS) 或者专用服务器。
 
+## 社区
+
+- 📬 [订阅项目更新](https://selfhostedstack.beehiiv.com/subscribe?utm_campaign=vpn-zh)（每月 1–2 封邮件）——获取免费的 VPN 和 AI 部署指南（PDF，英文）
+- 💬 加入 [r/selfhostedstack](https://www.reddit.com/r/selfhostedstack/) 社区参与讨论
+- ⭐ 如果本项目对你有帮助，请为仓库加星
+
 ## 系统要求
 
 一个云服务器，虚拟专用服务器 (VPS) 或者专用服务器，安装以下操作系统之一：

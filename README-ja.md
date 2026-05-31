@@ -74,6 +74,12 @@ IPsec VPN の事前構築された[Dockerイメージ](https://github.com/hwdsl2
 
 \* クラウドサーバー、仮想プライベートサーバー（VPS）、または専用サーバー。
 
+## コミュニティ
+
+- 📬 [プロジェクト更新を購読](https://selfhostedstack.beehiiv.com/subscribe?utm_campaign=vpn-ja)（月1〜2通のメール）——無料のVPN・AIデプロイガイドを入手（PDF・英語）
+- 💬 [r/selfhostedstack](https://www.reddit.com/r/selfhostedstack/) コミュニティでディスカッションに参加
+- ⭐ このリポジトリが役に立ったらスターを付けてください
+
 ## 要件
 
 以下のいずれかのインストールを備えたクラウドサーバー、仮想プライベートサーバー（VPS）、または専用サーバー：

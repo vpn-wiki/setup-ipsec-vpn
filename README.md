@@ -74,6 +74,12 @@ A pre-built [Docker image](https://github.com/hwdsl2/docker-ipsec-vpn-server) is
 
 \* A cloud server, virtual private server (VPS) or dedicated server.
 
+## Community
+
+- 📬 [Subscribe for project updates](https://selfhostedstack.beehiiv.com/subscribe?utm_campaign=vpn) (1–2 emails/month) — get free VPN and AI deployment guides (PDF)
+- 💬 Join the [r/selfhostedstack](https://www.reddit.com/r/selfhostedstack/) community for discussions
+- ⭐ Star the repository if it is useful to you
+
 ## Requirements
 
 A cloud server, virtual private server (VPS) or dedicated server, with an install of:
