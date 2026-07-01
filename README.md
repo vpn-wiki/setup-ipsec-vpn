@@ -89,7 +89,6 @@ A cloud server, virtual private server (VPS) or dedicated server, with an instal
 - CentOS Stream 10 or 9
 - Rocky Linux or AlmaLinux
 - Oracle Linux
-- Amazon Linux 2
 
 <details>
 <summary>
@@ -375,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 If you are unable to download, open [vpnupgrade.sh](extras/vpnupgrade.sh), then click the `Raw` button on the right. Press `Ctrl/Cmd+A` to select all, `Ctrl/Cmd+C` to copy, then paste into your favorite editor.
 </details>
 
-The latest supported Libreswan version is `5.3`. Check installed version: `ipsec --version`.
+The latest supported Libreswan version is `5.3.1`. Check installed version: `ipsec --version`.
 
 **Note:** `xl2tpd` can be updated using your system's package manager, such as `apt-get` on Ubuntu/Debian.
 

@@ -89,7 +89,6 @@ IPsec VPN の事前構築された[Dockerイメージ](https://github.com/hwdsl2
 - CentOS Stream 10または9
 - Rocky LinuxまたはAlmaLinux
 - Oracle Linux
-- Amazon Linux 2
 
 <details>
 <summary>
@@ -375,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 ダウンロードできない場合は、[vpnupgrade.sh](extras/vpnupgrade.sh)を開き、右側の`Raw`ボタンをクリックします。`Ctrl/Cmd+A`を押してすべて選択し、`Ctrl/Cmd+C`を押してコピーし、お気に入りのエディタに貼り付けます。
 </details>
 
-最新のサポートされているLibreswanバージョンは`5.3`です。インストールされているバージョンを確認します：`ipsec --version`。
+最新のサポートされているLibreswanバージョンは`5.3.1`です。インストールされているバージョンを確認します：`ipsec --version`。
 
 **注:** `xl2tpd`は、Ubuntu/Debianの`apt-get`などのシステムのパッケージマネージャーを使用して更新できます。
 
