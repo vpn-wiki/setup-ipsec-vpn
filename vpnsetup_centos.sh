@@ -76,6 +76,46 @@ EOF
   fi
 }
 
+check_esp_modules() {
+  esp4_conf=""
+  esp6_conf=""
+  esp6_disabled=0
+  install_re='^[[:space:]]*install[[:space:]]+'
+  false_cmd_re='/(usr/)?bin/false([[:space:]]|$)'
+  for mod_dir in /etc/modprobe.d /run/modprobe.d /usr/local/lib/modprobe.d \
+    /usr/lib/modprobe.d /lib/modprobe.d; do
+    [ -d "$mod_dir" ] || continue
+    for mod_conf in "$mod_dir"/*.conf; do
+      [ -f "$mod_conf" ] || continue
+      if [ -z "$esp4_conf" ] \
+        && grep -Eq "${install_re}esp4[[:space:]]+${false_cmd_re}" "$mod_conf"; then
+        esp4_conf="$mod_conf"
+      fi
+      if [ -z "$esp6_conf" ] \
+        && grep -Eq "${install_re}esp6[[:space:]]+${false_cmd_re}" "$mod_conf"; then
+        esp6_conf="$mod_conf"
+      fi
+    done
+  done
+  if [ -n "$esp4_conf" ]; then
+cat 1>&2 <<EOF
+Error: The ESP kernel module 'esp4' appears to be disabled by modprobe config:
+       $esp4_conf
+       IPsec VPN requires ESP support. Update your kernel/security packages
+       or follow your distribution's guidance, then re-run this script.
+EOF
+    exit 1
+  fi
+  if [ -n "$esp6_conf" ]; then
+    esp6_disabled=1
+cat 1>&2 <<EOF
+Warning: The ESP kernel module 'esp6' appears to be disabled by modprobe config:
+         $esp6_conf
+         IKEv2 IPv6 support will be disabled. VPN setup will continue.
+EOF
+  fi
+}
+
 check_os() {
   rh_file="/etc/redhat-release"
   if [ -f "$rh_file" ]; then
@@ -236,6 +276,7 @@ detect_ip() {
 
 detect_ipv6() {
   ip6=""
+  [ "$esp6_disabled" = 1 ] && return 0
   if ! printf '%s\n%s' "5.0" "$SWAN_VER" | sort -C -V; then
     return 0
   fi
@@ -697,7 +738,11 @@ update_iptables() {
       $ip6tf 1 -m conntrack --ctstate INVALID -j DROP
       $ip6tf 2 -i "$NET_IFACE" -d "$IP6_NET" -m conntrack --ctstate "$res" -j ACCEPT
       $ip6tf 3 -s "$IP6_NET" -o "$NET_IFACE" -j ACCEPT
-      $ip6tp -s "$IP6_NET" -o "$NET_IFACE" -m policy --dir out --pol none -j MASQUERADE
+      if [ "$use_nft" = 1 ]; then
+        $ip6tp -s "$IP6_NET" -o "$NET_IFACE" ! -d "$IP6_NET" -j MASQUERADE
+      else
+        $ip6tp -s "$IP6_NET" -o "$NET_IFACE" -m policy --dir out --pol none -j MASQUERADE
+      fi
     fi
     echo "# Modified by hwdsl2 VPN script" > "$IPT_FILE"
     if [ "$use_nft" = 1 ]; then
@@ -796,7 +841,11 @@ start_services() {
   restorecon /usr/local/libexec/ipsec -Rv 2>/dev/null
   if [ "$use_nft" = 1 ]; then
     if ! nft -c -f "$IPT_FILE" >/dev/null 2>&1; then
-      sed -i '/ip6 saddr fddd:\(2c4\|1194\):/s/xt target "MASQUERADE"/masquerade/' "$IPT_FILE"
+      sed -i '/^[[:space:]]*ip6 saddr .*xt target "MASQUERADE"/s/xt target "MASQUERADE"/masquerade/' "$IPT_FILE"
+    fi
+    if ! nft -c -f "$IPT_FILE" >/dev/null 2>&1; then
+      echo "Warning: Failed to validate nftables rules in '$IPT_FILE'." >&2
+      echo "         VPN setup will continue, but nftables may fail to reload after reboot." >&2
     fi
     nft -f "$IPT_FILE"
   else
@@ -877,6 +926,7 @@ vpnsetup() {
   check_vz
   check_lxc
   check_os
+  check_esp_modules
   check_iface
   check_creds
   check_dns
