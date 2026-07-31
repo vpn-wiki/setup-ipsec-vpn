@@ -105,7 +105,7 @@ IPsec VPN の事前構築された[Dockerイメージ](https://github.com/hwdsl2
 
 クイックデプロイ：
 
-[![Deploy to Linode](docs/images/linode-deploy-button.png)](https://cloud.linode.com/stackscripts/37239) &nbsp;[![Deploy to AWS](docs/images/aws-deploy-button.png)](aws/README.md) &nbsp;[![Deploy to Azure](docs/images/azure-deploy-button.png)](azure/README.md)
+[![Deploy to Linode](docs/images/linode-deploy-button.png)](https://cloud.linode.com/stackscripts/37239) &nbsp;[![Deploy to Azure](docs/images/azure-deploy-button.png)](azure/README.md)
 
 [**&raquo; 自分のVPNを運用したいが、そのためのサーバーがない**](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#gettingavps)
 
@@ -374,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 ダウンロードできない場合は、[vpnupgrade.sh](extras/vpnupgrade.sh)を開き、右側の`Raw`ボタンをクリックします。`Ctrl/Cmd+A`を押してすべて選択し、`Ctrl/Cmd+C`を押してコピーし、お気に入りのエディタに貼り付けます。
 </details>
 
-最新のサポートされているLibreswanバージョンは`5.3.1`です。インストールされているバージョンを確認します：`ipsec --version`。
+最新のサポートされているLibreswanバージョンは`5.3.2`です。インストールされているバージョンを確認します：`ipsec --version`。
 
 **注:** `xl2tpd`は、Ubuntu/Debianの`apt-get`などのシステムのパッケージマネージャーを使用して更新できます。
 

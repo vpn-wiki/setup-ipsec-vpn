@@ -105,7 +105,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/vpnsetup.sh
 
 Быстрое развёртывание в:
 
-[![Deploy to Linode](docs/images/linode-deploy-button.png)](https://cloud.linode.com/stackscripts/37239) &nbsp;[![Deploy to AWS](docs/images/aws-deploy-button.png)](aws/README.md) &nbsp;[![Deploy to Azure](docs/images/azure-deploy-button.png)](azure/README.md)
+[![Deploy to Linode](docs/images/linode-deploy-button.png)](https://cloud.linode.com/stackscripts/37239) &nbsp;[![Deploy to Azure](docs/images/azure-deploy-button.png)](azure/README.md)
 
 [**&raquo; Я хочу запустить собственный VPN, но у меня нет сервера для этого**](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#gettingavps)
 
@@ -374,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 Если вы не можете скачать файл, откройте [vpnupgrade.sh](extras/vpnupgrade.sh), затем нажмите кнопку `Raw` справа. Нажмите `Ctrl/Cmd+A`, чтобы выделить всё, `Ctrl/Cmd+C`, чтобы скопировать, затем вставьте в ваш любимый редактор.
 </details>
 
-Последняя поддерживаемая версия Libreswan — `5.3.1`. Проверить установленную версию: `ipsec --version`.
+Последняя поддерживаемая версия Libreswan — `5.3.2`. Проверить установленную версию: `ipsec --version`.
 
 **Примечание:** `xl2tpd` можно обновить с помощью менеджера пакетов вашей системы, например `apt-get` в Ubuntu/Debian.
 

@@ -105,7 +105,7 @@ IPsec VPN 也提供預先建構的 [Docker 映像](https://github.com/hwdsl2/doc
 
 使用以下按鈕快速部署：
 
-[![Deploy to Linode](docs/images/linode-deploy-button.png)](https://cloud.linode.com/stackscripts/37239) &nbsp;[![Deploy to AWS](docs/images/aws-deploy-button.png)](aws/README-zh.md) &nbsp;[![Deploy to Azure](docs/images/azure-deploy-button.png)](azure/README-zh.md)
+[![Deploy to Linode](docs/images/linode-deploy-button.png)](https://cloud.linode.com/stackscripts/37239) &nbsp;[![Deploy to Azure](docs/images/azure-deploy-button.png)](azure/README-zh.md)
 
 [**&raquo; 我想建立並使用自己的 VPN，但沒有可用的伺服器**](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#gettingavps)
 
@@ -374,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 如果無法下載，打開 [vpnupgrade.sh](extras/vpnupgrade.sh)，然後點擊右側的 `Raw` 按鈕。按快捷鍵 `Ctrl/Cmd+A` 全選，`Ctrl/Cmd+C` 複製，然後貼上到你喜歡的編輯器。
 </details>
 
-目前支援的 Libreswan 最新版本是 `5.3.1`。查看已安裝版本：`ipsec --version`。
+目前支援的 Libreswan 最新版本是 `5.3.2`。查看已安裝版本：`ipsec --version`。
 
 **註：** `xl2tpd` 可以使用系統的套件管理器進行更新，例如 Ubuntu/Debian 上的 `apt-get`。
 
