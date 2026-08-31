@@ -23,7 +23,7 @@ IPsec VPN 可以加密你的網路流量，以防止在透過網際網路傳送�
 
 - Docker VPN：[IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh-Hant.md)、[WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/README-zh-Hant.md)、[Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/README-zh-Hant.md)
 - AI：[自架 AI 套件](https://github.com/hwdsl2/self-hosted-ai-stack/blob/main/README-zh-Hant.md)，用於本機 LLM、聊天、RAG、語音和 AI 工具
-- :books: **書籍：**[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)、[Privacy Tools in the Age of AI](docs/vpn-book-zh-Hant.md)
+- :books: 書籍：[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)、[Privacy Tools in the Age of AI](docs/vpn-book-zh-Hant.md)
 
 ## 快速開始
 
@@ -374,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 如果無法下載，打開 [vpnupgrade.sh](extras/vpnupgrade.sh)，然後點擊右側的 `Raw` 按鈕。按快捷鍵 `Ctrl/Cmd+A` 全選，`Ctrl/Cmd+C` 複製，然後貼上到你喜歡的編輯器。
 </details>
 
-目前支援的 Libreswan 最新版本是 `5.3.2`。查看已安裝版本：`ipsec --version`。
+目前支援的 Libreswan 最新版本是 `5.4`。查看已安裝版本：`ipsec --version`。
 
 **註：** `xl2tpd` 可以使用系統的套件管理器進行更新，例如 Ubuntu/Debian 上的 `apt-get`。
 

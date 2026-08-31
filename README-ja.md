@@ -23,7 +23,7 @@ IPsecサーバーとして[Libreswan](https://libreswan.org/)を使用し、L2TP
 
 - Docker VPN：[IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server)、[WireGuard](https://github.com/hwdsl2/docker-wireguard)、[OpenVPN](https://github.com/hwdsl2/docker-openvpn)、[Headscale](https://github.com/hwdsl2/docker-headscale)
 - AI：[セルフホストAIスタック](https://github.com/hwdsl2/self-hosted-ai-stack)：ローカルLLM、チャット、RAG、音声、AIツール向け
-- :books: **本：**[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)、[Privacy Tools in the Age of AI](docs/vpn-book-ja.md)
+- :books: 本：[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)、[Privacy Tools in the Age of AI](docs/vpn-book-ja.md)
 
 ## クイックスタート
 
@@ -374,7 +374,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 ダウンロードできない場合は、[vpnupgrade.sh](extras/vpnupgrade.sh)を開き、右側の`Raw`ボタンをクリックします。`Ctrl/Cmd+A`を押してすべて選択し、`Ctrl/Cmd+C`を押してコピーし、お気に入りのエディタに貼り付けます。
 </details>
 
-最新のサポートされているLibreswanバージョンは`5.3.2`です。インストールされているバージョンを確認します：`ipsec --version`。
+最新のサポートされているLibreswanバージョンは`5.4`です。インストールされているバージョンを確認します：`ipsec --version`。
 
 **注:** `xl2tpd`は、Ubuntu/Debianの`apt-get`などのシステムのパッケージマネージャーを使用して更新できます。
 
