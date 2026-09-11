@@ -1014,8 +1014,8 @@ To customize IKEv2 or client options, run this script without arguments.
 1. 获取 VPN 服务器的公共 IP 地址，将它保存到变量并检查。
 
    ```bash
-   PUBLIC_IP=$(dig @resolver1.opendns.com -t A -4 myip.opendns.com +short)
-   [ -z "$PUBLIC_IP" ] && PUBLIC_IP=$(wget -t 2 -T 10 -qO- http://ipv4.icanhazip.com)
+   PUBLIC_IP=$(wget -t 2 -T 10 -4 --max-redirect=0 -qO- https://ipv4.icanhazip.com) \
+     || PUBLIC_IP=$(wget -t 2 -T 10 -4 --max-redirect=0 -qO- https://api.ipify.org)
    printf '%s\n' "$PUBLIC_IP"
    ```
 

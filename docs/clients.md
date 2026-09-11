@@ -403,7 +403,7 @@ route add default dev ppp0
 The VPN connection is now complete. Verify that your traffic is being routed properly:
 
 ```bash
-wget -qO- http://ipv4.icanhazip.com; echo
+wget -qO- https://ipv4.icanhazip.com; echo
 ```
 
 The above command should return `Your VPN Server IP`.

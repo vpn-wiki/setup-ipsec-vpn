@@ -404,7 +404,7 @@ route add default dev ppp0
 至此 VPN 连接已成功完成。检查 VPN 是否正常工作：
 
 ```bash
-wget -qO- http://ipv4.icanhazip.com; echo
+wget -qO- https://ipv4.icanhazip.com; echo
 ```
 
 以上命令应该返回 `你的 VPN 服务器 IP`。

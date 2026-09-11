@@ -1114,8 +1114,8 @@ View example steps for manually configuring IKEv2 with Libreswan.
 1. Find the VPN server's public IP, save it to a variable and check.
 
    ```bash
-   PUBLIC_IP=$(dig @resolver1.opendns.com -t A -4 myip.opendns.com +short)
-   [ -z "$PUBLIC_IP" ] && PUBLIC_IP=$(wget -t 2 -T 10 -qO- http://ipv4.icanhazip.com)
+   PUBLIC_IP=$(wget -t 2 -T 10 -4 --max-redirect=0 -qO- https://ipv4.icanhazip.com) \
+     || PUBLIC_IP=$(wget -t 2 -T 10 -4 --max-redirect=0 -qO- https://api.ipify.org)
    printf '%s\n' "$PUBLIC_IP"
    ```
 

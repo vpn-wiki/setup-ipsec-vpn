@@ -41,6 +41,20 @@ check_ip() {
   printf '%s' "$1" | tr -d '\n' | grep -Eq "$IP_REGEX"
 }
 
+get_public_ip() {
+  local ip_addr ip_url
+  for ip_url in https://ipv4.icanhazip.com https://api.ipify.org; do
+    ip_addr=$(wget -t 2 -T 10 -4 --max-redirect=0 -qO- "$ip_url" 2>/dev/null) || continue
+    ip_addr=${ip_addr%$'\r'}
+    [[ "$ip_addr" != *$'\n'* && "$ip_addr" != *$'\r'* ]] || continue
+    if check_ip "$ip_addr"; then
+      public_ip="$ip_addr"
+      return 0
+    fi
+  done
+  return 1
+}
+
 check_ip6() {
   IP6_REGEX='^[0-9a-fA-F]{0,4}(:[0-9a-fA-F]{0,4}){1,7}$'
   printf '%s' "$1" | tr -d '\n' | grep -Eq "$IP6_REGEX"
@@ -170,7 +184,7 @@ install_setup_pkgs() {
   bigecho "Installing packages required for setup..."
   (
     set -x
-    apk add -U -q bash bind-tools coreutils openssl wget iptables ip6tables iproute2 sed grep
+    apk add -U -q bash ca-certificates bind-tools coreutils openssl wget iptables ip6tables iproute2 sed grep
   ) || exiterr2
 }
 
@@ -187,10 +201,7 @@ detect_ip() {
   check_ip "$public_ip" || get_default_ip
   check_ip "$public_ip" && return 0
   bigecho "Trying to auto discover IP of this server..."
-  check_ip "$public_ip" || public_ip=$(dig @resolver1.opendns.com -t A -4 myip.opendns.com +short)
-  check_ip "$public_ip" || public_ip=$(wget -t 2 -T 10 -qO- http://ipv4.icanhazip.com)
-  check_ip "$public_ip" || public_ip=$(wget -t 2 -T 10 -qO- http://ip1.dynupdate.no-ip.com)
-  check_ip "$public_ip" || exiterr "Cannot detect this server's public IP. Define it as variable 'VPN_PUBLIC_IP' and re-run this script."
+  get_public_ip || exiterr "Cannot detect this server's public IP. Define it as variable 'VPN_PUBLIC_IP' and re-run this script."
 }
 
 detect_ipv6() {
