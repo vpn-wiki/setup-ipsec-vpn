@@ -23,13 +23,12 @@ IPsecサーバーとして[Libreswan](https://libreswan.org/)を使用し、L2TP
 
 - Docker VPN：[IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server)、[WireGuard](https://github.com/hwdsl2/docker-wireguard)、[OpenVPN](https://github.com/hwdsl2/docker-openvpn)、[Headscale](https://github.com/hwdsl2/docker-headscale)
 - AI：[セルフホストAIスタック](https://github.com/hwdsl2/self-hosted-ai-stack)：ローカルLLM、チャット、RAG、音声、AIツール向け
-- 📚 関連書籍：[Privacy Tools in the Age of AI](docs/vpn-book-ja.md)
 
-> 📘 **新刊：**[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)。自分専用のプライベート AI スタックを構築し、安全に保護・運用するための実践ガイドです。
+> 📘 セルフホストAIに興味がありますか？[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)：**電子書籍 $0.99／£0.99、9月20日まで**（米国・英国限定）。自分専用のプライベートAIスタックを構築し、セキュリティを確保して運用するための実践ガイドです。
 
 ## クイックスタート
 
-まず、[対応OS](#要件)をインストールしたLinuxサーバー\*を準備します。
+まず、[対応OS](#要件)が稼働している Linux サーバー\*を用意します。
 
 このワンライナーを使用してIPsec VPNサーバーをセットアップします：
 
@@ -39,8 +38,7 @@ wget https://get.vpnsetup.net -O vpn.sh && sudo sh vpn.sh
 
 VPNログイン情報はランダムに生成され、完了時に表示されます。
 
-> [!TIP]
-> 同じサーバーに[WireGuard](https://github.com/hwdsl2/wireguard-install)、[OpenVPN](https://github.com/hwdsl2/openvpn-install)、および/または[Headscale](https://github.com/hwdsl2/headscale-install)をインストールすることもできます。
+**ヒント:** 同じサーバーに[WireGuard](https://github.com/hwdsl2/wireguard-install)、[OpenVPN](https://github.com/hwdsl2/openvpn-install)、および/または[Headscale](https://github.com/hwdsl2/headscale-install)をインストールすることもできます。
 
 <details>
 <summary>
@@ -116,7 +114,7 @@ IPsec VPN の事前構築された[Dockerイメージ](https://github.com/hwdsl2
 IPsec VPN の事前構築された[Dockerイメージ](https://github.com/hwdsl2/docker-ipsec-vpn-server)も利用可能です。上級ユーザーは[Raspberry Pi](https://www.raspberrypi.com)にインストールできます。[[1]](https://elasticbyte.net/posts/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/) [[2]](https://www.stewright.me/2018/07/create-a-raspberry-pi-vpn-server-using-l2tpipsec/)
 
 > [!WARNING]
-> これらのスクリプトをPCやMacで実行しないでください！これらはサーバーでのみ使用する必要があります！
+> これらのスクリプトは、VPN を稼働させる Linux サーバー上で実行してください。個人用の PC や Mac では実行しないでください。
 
 ## インストール
 
@@ -154,8 +152,7 @@ VPN_PASSWORD='your_vpn_password' \
 sh vpn.sh
 ```
 
-> [!TIP]
-> 同じサーバーに[WireGuard](https://github.com/hwdsl2/wireguard-install)、[OpenVPN](https://github.com/hwdsl2/openvpn-install)、および/または[Headscale](https://github.com/hwdsl2/headscale-install)をインストールすることもできます。サーバーがCentOS Stream、Rocky Linux、またはAlmaLinuxを実行している場合、最初にOpenVPN/WireGuardをインストールし、その後IPsec VPNをインストールします。
+**ヒント:** 同じサーバーに[WireGuard](https://github.com/hwdsl2/wireguard-install)、[OpenVPN](https://github.com/hwdsl2/openvpn-install)、および/または[Headscale](https://github.com/hwdsl2/headscale-install)をインストールすることもできます。サーバーがCentOS Stream、Rocky Linux、またはAlmaLinuxを実行している場合、最初にOpenVPN/WireGuardをインストールし、その後IPsec VPNをインストールします。
 
 <details>
 <summary>
@@ -329,7 +326,7 @@ sudo VPN_PROTECT_CONFIG=yes sh vpn.sh
 
 **[IPsec/XAuth（"Cisco IPsec"）VPNクライアントの設定](docs/clients-xauth.md)**
 
-**:book: [VPN本](docs/vpn-book-ja.md)を読んで[追加コンテンツ](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-O5O7FVF8J)にアクセスしてください。**
+**📘 [VPN本](docs/vpn-book-ja.md)を読んで[追加コンテンツ](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-O5O7FVF8J)にアクセスしてください。**
 
 自分のVPNを楽しんでください！ :sparkles::tada::rocket::sparkles:
 

@@ -23,13 +23,12 @@ IPsec VPN 可以加密你的網路流量，以防止在透過網際網路傳送�
 
 - Docker VPN：[IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh-Hant.md)、[WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/README-zh-Hant.md)、[Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/README-zh-Hant.md)
 - AI：[自架 AI 套件](https://github.com/hwdsl2/self-hosted-ai-stack/blob/main/README-zh-Hant.md)，用於本機 LLM、聊天、RAG、語音和 AI 工具
-- 📚 延伸閱讀：[Privacy Tools in the Age of AI](docs/vpn-book-zh-Hant.md)
 
-> 📘 **新書：**[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)。一本關於建置、保護和維運自己的私有 AI 技術棧的實用指南。
+> 📘 對自架 AI 有興趣嗎？[The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon)：**電子書 $0.99/£0.99，優惠至 9 月 20 日止**（僅限美國/英國）。一本關於建置、保護和維運自己的私有 AI 技術堆疊的實用指南。
 
 ## 快速開始
 
-首先，在你的 Linux 伺服器\* 上安裝[支援的作業系統](#系統需求)。
+首先，準備一台執行[支援的作業系統](#系統需求)的 Linux 伺服器\*。
 
 使用以下命令快速架設 IPsec VPN 伺服器：
 
@@ -39,8 +38,7 @@ wget https://get.vpnsetup.net -O vpn.sh && sudo sh vpn.sh
 
 你的 VPN 登入憑證將會自動隨機生成，並在安裝完成後顯示。
 
-> [!TIP]
-> 你可以選擇在同一台伺服器上安裝 [WireGuard](https://github.com/hwdsl2/wireguard-install/blob/master/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/openvpn-install/blob/master/README-zh-Hant.md) 和/或 [Headscale](https://github.com/hwdsl2/headscale-install/blob/main/README-zh-Hant.md)。
+**提示：** 你可以選擇在同一台伺服器上安裝 [WireGuard](https://github.com/hwdsl2/wireguard-install/blob/master/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/openvpn-install/blob/master/README-zh-Hant.md) 和/或 [Headscale](https://github.com/hwdsl2/headscale-install/blob/main/README-zh-Hant.md)。
 
 <details>
 <summary>
@@ -116,7 +114,7 @@ IPsec VPN 也提供預先建構的 [Docker 映像](https://github.com/hwdsl2/doc
 IPsec VPN 也提供預先建構的 [Docker 映像](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh-Hant.md)。進階使用者可以在 [Raspberry Pi](https://www.raspberrypi.com) 上安裝。[[1]](https://elasticbyte.net/posts/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/) [[2]](https://www.stewright.me/2018/07/create-a-raspberry-pi-vpn-server-using-l2tpipsec/)
 
 > [!WARNING]
-> **不要** 在你的 PC 或 Mac 上執行這些腳本！它們只能用在伺服器上！
+> 請在用來提供 VPN 服務的 Linux 伺服器上執行這些腳本。不要在個人 PC 或 Mac 上執行。
 
 ## 安裝說明
 
@@ -154,8 +152,7 @@ VPN_PASSWORD='你的VPN密碼' \
 sh vpn.sh
 ```
 
-> [!TIP]
-> 你可以選擇在同一台伺服器上安裝 [WireGuard](https://github.com/hwdsl2/wireguard-install/blob/master/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/openvpn-install/blob/master/README-zh-Hant.md) 和/或 [Headscale](https://github.com/hwdsl2/headscale-install/blob/main/README-zh-Hant.md)。如果你的伺服器執行 CentOS Stream、Rocky Linux 或 AlmaLinux，請先安裝 OpenVPN/WireGuard，然後再安裝 IPsec VPN。
+**提示：** 你可以選擇在同一台伺服器上安裝 [WireGuard](https://github.com/hwdsl2/wireguard-install/blob/master/README-zh-Hant.md)、[OpenVPN](https://github.com/hwdsl2/openvpn-install/blob/master/README-zh-Hant.md) 和/或 [Headscale](https://github.com/hwdsl2/headscale-install/blob/main/README-zh-Hant.md)。如果你的伺服器執行 CentOS Stream、Rocky Linux 或 AlmaLinux，請先安裝 OpenVPN/WireGuard，然後再安裝 IPsec VPN。
 
 <details>
 <summary>
@@ -329,7 +326,7 @@ sudo VPN_PROTECT_CONFIG=yes sh vpn.sh
 
 **[設定 IPsec/XAuth ("Cisco IPsec") VPN 客戶端](docs/clients-xauth-zh.md)**
 
-**閱讀 [:book: VPN book](docs/vpn-book-zh-Hant.md) 以存取[額外內容](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-X8X5FVFZC)。**
+**閱讀 [📘 VPN book](docs/vpn-book-zh-Hant.md) 以存取[額外內容](https://ko-fi.com/post/Support-this-project-and-get-access-to-supporter-o-X8X5FVFZC)。**
 
 開始使用自己的專屬 VPN! :sparkles::tada::rocket::sparkles:
 
