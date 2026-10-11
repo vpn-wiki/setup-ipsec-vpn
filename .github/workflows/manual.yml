@@ -14,15 +14,15 @@ on:
   workflow_dispatch:
     inputs:
       libreswan_version:
-        description: 'Setup test version, without a leading v (for example: 5.4)'
+        description: 'Setup test version, without a leading v (for example: 5.4.1)'
         required: true
         type: string
       upgrade_from_version:
-        description: 'First upgrade test version (for example: 5.3.2)'
+        description: 'First upgrade test version (for example: 5.4)'
         required: true
         type: string
       upgrade_to_version:
-        description: 'Second upgrade test version (for example: 5.4)'
+        description: 'Second upgrade test version (for example: 5.4.1)'
         required: true
         type: string
       test_scope:
