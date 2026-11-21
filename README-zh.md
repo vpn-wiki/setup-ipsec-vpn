@@ -23,8 +23,7 @@ IPsec VPN 可以加密你的网络流量，以防止在通过因特网传送时�
 
 - **Docker VPN：** [IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh.md)、[WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/docs/README-zh.md)、[OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/docs/README-zh.md)、[Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/docs/README-zh.md)
 - **AI：** [自托管 AI 套件](https://github.com/hwdsl2/self-hosted-ai-stack/blob/main/docs/README-zh.md)，用于本地 LLM、聊天、RAG、语音和 AI 工具
-
-> 📘 对自托管 AI 感兴趣吗？**The Self-Hosted AI Builder’s Guide**（[Kindle](https://books2read.com/aiguide?store=amazon) · [Google Play](https://books2read.com/aiguide?store=google) · [平装书](https://books2read.com/aiguide?store=amazon-paperback&format=PAPERBACK)）是一本关于构建、保护和运维自己的私有 AI 技术栈的实用指南。
+- **图书：** [搭建自己的 VPN 服务器](https://books2read.com/vpnguidezh) · [The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide)
 
 ## 快速开始
 
@@ -373,7 +372,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 如果无法下载，打开 [vpnupgrade.sh](extras/vpnupgrade.sh)，然后点击右边的 `Raw` 按钮。按快捷键 `Ctrl/Cmd+A` 全选，`Ctrl/Cmd+C` 复制，然后粘贴到你喜欢的编辑器。
 </details>
 
-当前支持的 Libreswan 最新版本是 `5.4.1`。查看已安装版本：`ipsec --version`。
+当前支持的 Libreswan 最新版本是 `5.4.2`。查看已安装版本：`ipsec --version`。
 
 **注：** `xl2tpd` 可以使用系统的软件包管理器进行更新，例如 Ubuntu/Debian 上的 `apt-get`。
 

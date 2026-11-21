@@ -23,8 +23,7 @@ IPsec VPN шифрует сетевой трафик, поэтому никто 
 
 - **Docker VPN:** [IPsec VPN](https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-ru.md), [WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/docs/README-ru.md), [OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/docs/README-ru.md), [Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/docs/README-ru.md)
 - **AI:** [Стек ИИ на своём сервере](https://github.com/hwdsl2/self-hosted-ai-stack/blob/main/docs/README-ru.md) для локальных LLM, чата, RAG, голосовых функций и инструментов ИИ
-
-> 📘 Хотите развернуть ИИ на собственном сервере? **The Self-Hosted AI Builder’s Guide** ([Kindle](https://books2read.com/aiguide?store=amazon) · [Google Play](https://books2read.com/aiguide?store=google) · [книга в мягкой обложке](https://books2read.com/aiguide?store=amazon-paperback&format=PAPERBACK)): практическое руководство по созданию, защите и эксплуатации собственного приватного ИИ-стека.
+- **Книги:** [Build Your Own VPN Server](https://books2read.com/vpnguide) · [The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide)
 
 ## Быстрый старт
 
@@ -373,7 +372,7 @@ https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
 Если вы не можете скачать файл, откройте [vpnupgrade.sh](extras/vpnupgrade.sh), затем нажмите кнопку `Raw` справа. Нажмите `Ctrl/Cmd+A`, чтобы выделить всё, `Ctrl/Cmd+C`, чтобы скопировать, затем вставьте в ваш любимый редактор.
 </details>
 
-Последняя поддерживаемая версия Libreswan — `5.4.1`. Проверить установленную версию: `ipsec --version`.
+Последняя поддерживаемая версия Libreswan — `5.4.2`. Проверить установленную версию: `ipsec --version`.
 
 **Примечание:** `xl2tpd` можно обновить с помощью менеджера пакетов вашей системы, например `apt-get` в Ubuntu/Debian.
 

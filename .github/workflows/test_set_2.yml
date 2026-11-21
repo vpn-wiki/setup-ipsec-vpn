@@ -19,11 +19,11 @@ on:
       upgrade_from_version:
         required: false
         type: string
-        default: '5.4'
+        default: '5.4.1'
       upgrade_to_version:
         required: false
         type: string
-        default: '5.4.1'
+        default: '5.4.2'
       show_libreswan_build_output:
         required: false
         type: boolean
@@ -39,7 +39,7 @@ jobs:
     timeout-minutes: 120
     strategy:
       matrix:
-        os_version: ["ubuntu:26.04", "ubuntu:24.04", "ubuntu:22.04", "debian:13", "debian:12", "alpine:3.23", "alpine:3.22"]
+        os_version: ["ubuntu:26.04", "ubuntu:24.04", "ubuntu:22.04", "debian:13", "debian:12", "alpine:3.24", "alpine:3.23"]
       fail-fast: false
     container:
       image: ${{ matrix.os_version }}
@@ -169,6 +169,9 @@ jobs:
 
           if [ "$os_type" = "alpine" ]; then
             apk add -U wget rsyslog sed bash
+            # Keep the test auth log consistent across Alpine versions.
+            mkdir -p /etc/rsyslog.d
+            printf '%s\n' 'authpriv.* /var/log/auth.log' '& stop' > /etc/rsyslog.d/vpn-test.conf
             rsyslogd
           else
             export DEBIAN_FRONTEND=noninteractive
